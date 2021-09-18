@@ -98,8 +98,10 @@ j'identifie l'adresse mac de la passerelle rapidement car son adresse physique n
   ```
 ### Modification d'adresse IP (part 2)
 
-- Afin de trouver une adresse libre, j'ai lancé un scan nmap puis j'ai sélectionné une adresse comprise entre deux adresses ip bien éloigné. Ensuite j'ai changé mon ip dans les parametres de mon os: 
+- Afin de trouver une adresse libre, j'ai lancé un scan nmap puis j'ai sélectionné une adresse comprise entre deux adresses ip bien éloigné. Ensuite j'ai changé mon ip dans les parametres de mon os:
+ 
 ![](https://i.imgur.com/9yXEzWa.png)
+
 Ensuite j'ai lancé un scan nmap avec la commande ```nmap -sn 10.33.0.0/22```,  voici le résultat :
 ![](https://i.imgur.com/6fixVIR.png)
 
