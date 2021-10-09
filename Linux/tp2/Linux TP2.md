@@ -255,7 +255,10 @@ J'enable la dernière version de php afin qu'il soit oppérationel dès le boot.
 
 je run `dnf module list php`
 
-J'installe les outils nécessaire avec la commande : ```dnf install httpd mariadb-server vim wget zip unzip libxml2 openssl php74-php php74-php-ctype php74-php-curl php74-php-gd php74-php-iconv php74-php-json php74-php-libxml php74-php-mbstring php74-php-openssl php74-php-posix php74-php-session php74-php-xml php74-php-zip php74-php-zlib php74-php-pdo php74-php-mysqlnd php74-php-intl php74-php-bcmath php74-php-gmp```
+J'installe les outils nécessaire avec la commande : 
+```
+[benji@web /]$sudo dnf install httpd mariadb-server vim wget zip unzip libxml2 openssl php74-php php74-php-ctype php74-php-curl php74-php-gd php74-php-iconv php74-php-json php74-php-libxml php74-php-mbstring php74-php-openssl php74-php-posix php74-php-session php74-php-xml php74-php-zip php74-php-zlib php74-php-pdo php74-php-mysqlnd php74-php-intl php74-php-bcmath php74-php-gmp
+```
 
 Mon service httpd étant déjà configuré pour démarré automatiquement avec la commande ` systemctl enable httpd `, je passe à l'étape suivante.
 
