@@ -61,12 +61,12 @@ public (active)
 
 Je vérifie que le service est bien démarré et qu'il se lance automatiquement avec la commande `systemctl status httpd `: 
 
-`
+```
 [benji@web ~]$ sudo systemctl status httpd
 ● httpd.service - The Apache HTTP Server
    Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
    Active: active (running) since Mon 2021-10-04 08:48:23 CEST; 6min ago
-`
+```
 
 Nous observons que le service est bien lancé avec **Active** et qu'il démarre automatiquement avec **enable**.
 
