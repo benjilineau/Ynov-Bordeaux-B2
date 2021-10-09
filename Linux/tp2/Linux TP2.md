@@ -344,8 +344,7 @@ Server version: 5.5.5-10.3.28-MariaDB MariaDB Server
 ```SELECT User FROM mysql.user;```
 ### C. Finaliser l'installation de NextCloud
 
-- modifiez votre fichier hosts 
- Je modifie mon fichier host situé dans C:\Windows\System32\drivers\etc, je lui ajoute ceci : 
+- Je modifie mon fichier host situé dans C:\Windows\System32\drivers\etc, je lui ajoute ceci : 
  `10.102.1.11 web.tp2.Linux`.
  
 🌞 Exploration de la base de données
