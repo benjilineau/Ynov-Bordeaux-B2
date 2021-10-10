@@ -327,9 +327,39 @@ Ensuite, afin de démarré le service automatiquement, je fais `systemctl enable
 
 Afin d'installé correctement mysql, je lance `mysql_secure_installation`, je crée un nouveau mot de passe pour l'utilisateur root, je supprime les utilisateurs anonymes puis je presse entrée jusqu'a la fin du setup.
 
-Avec la commande `ss -antpl` j'observe que le port utilisé par mariadb est le port **3306**. Je l'ouvre donc avec la commande : `[benji@db ~]$ sudo firewall-cmd --add-port=3306/tcp --permanent
-`
+Avec la commande `ss -antpl` j'observe que le port utilisé par mariadb est le port **3306**. Je l'ouvre donc avec les commandes : 
+```
+[benji@db ~]$ sudo firewall-cmd --new-zone=mariadb-access --permanent
+success
+[benji@db ~]$ sudo firewall-cmd --reload
+success
+[benji@db ~]$ sudo firewall-cmd --get-zones
+block dmz drop external home internal mariadb-access nm-shared public trusted work
+[benji@db ~]$ sudo firewall-cmd --zone=mariadb-access --add-source=10.102.1.11/24 --permanent
+success
+[benji@db ~]$ sudo firewall-cmd --zone=mariadb-access --add-port=3306/tcp --permanent
+success
+[benji@db ~]$ sudo firewall-cmd --reload
+success
+```
+### Préparation de la base pour nextcloud 
 
+```
+# Création d'un utilisateur dans la base, avec un mot de passe
+# L'adresse IP correspond à l'adresse IP depuis laquelle viendra les connexions. Cela permet de restreindre les IPs autorisées à se connecter.
+# Dans notre cas, c'est l'IP de web.tp2.linux
+# "meow" c'est le mot de passe :D
+CREATE USER 'nextcloud'@'10.102.1.11' IDENTIFIED BY 'meow';
+
+# Création de la base de donnée qui sera utilisée par NextCloud
+CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+# On donne tous les droits à l'utilisateur nextcloud sur toutes les tables de la base qu'on vient de créer
+GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'10.102.1.11';
+
+# Actualisation des privilèges
+FLUSH PRIVILEGES;
+```
 - Sur la Machine Nextcloud
 
 Je vérifie le fonctionnement de l'accèssibilité de la base de donnée avec la commande ci-dessous:
