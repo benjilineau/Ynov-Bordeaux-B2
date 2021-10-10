@@ -193,7 +193,8 @@ Je vérifie qu'ils ont pris effet après avoir redémarré apache avec la comman
 ```
 Nous observons que c'est bien le nouvel utilisateur papou qui gère maintenant le service apache.
 
-Voici la ligne que je modifie pour changer le port d'écoute : ` Listen 90 `
+Voici la ligne que je modifie pour changer le port d'écoute : ` Listen 443 `
+
 Je ferme mon port 80: 
 ```
 [benji@web ~]$ sudo firewall-cmd --remove-port=80/tcp --permanent
@@ -371,7 +372,17 @@ Your MySQL connection id is 9
 Server version: 5.5.5-10.3.28-MariaDB MariaDB Server
 ```
 - trouver une commande qui permet de lister tous les utilisateurs de la base de données :
-```SELECT User FROM mysql.user;```
+```
+MariaDB [(none)]> SELECT User FROM mysql.user;
++-----------+
+| User      |
++-----------+
+| nextcloud |
+| root      |
+| root      |
+| root      |
++-----------+
+```
 ### C. Finaliser l'installation de NextCloud
 
 - Je modifie mon fichier host situé dans C:\Windows\System32\drivers\etc, je lui ajoute ceci : 
