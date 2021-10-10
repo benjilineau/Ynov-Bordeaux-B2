@@ -345,6 +345,7 @@ ilovecatgif
 - Le **DNS** utilise l'**UDP**, ici c'est la rapidité qui prime car l'état des trames est "négligable" étant donné son faible chiffre (2),une nouvelle requête sera envoyée si les paquets ont été corrompue. 
 
 📁 **Captures réseau [tp3_ssh.pcap](captures/tp3_ssh.pcap), [tp3_http.pcap](captures/tp3_http.pcap), [tp3_dns.pcap](captures/tp3_dns.pcap) et [tp3_nfs.pcap](captures/tp3_nfs.pcap)**
+
 📁 **Capture réseau [tp3_3way.pcap](captures/tp3_3way.pcap)**
 
 ## V. El final
