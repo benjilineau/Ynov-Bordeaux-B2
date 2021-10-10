@@ -276,7 +276,7 @@ Je modifie/crée le fichier `  /etc/httpd/sites-available/web.tp2.linux `, je y 
 
 ```
 <VirtualHost *:80>
-  DocumentRoot /var/www/sub domains/web.tp2.linux/html/
+  DocumentRoot /var/www/sub-domains/web.tp2.linux/html/
   ServerName  nextcloud.yourdomain.com
 
   <Directory /var/www/sub-domains/web.tp2.linux/html/>
