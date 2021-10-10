@@ -343,7 +343,7 @@ ilovecatgif
 - Le **SSH**,l'**hhtp** et le **nfs**, sont encapsulés dans du **TCP**. Ici se que nous voulons c'est que les trames arrivent et en bon état, nous préférons donc une connexion plus fiable que rapide et c'est se que propose le tcp.
 
 - Le **DNS** utilise l'**UDP**, ici c'est la rapidité qui prime car l'état des trames est "négligable" étant donné son faible chiffre (2),une nouvelle requête sera envoyée si les paquets ont été corrompue. 
-📁 **Captures réseau [tp3_ssh.pcap](captures/tp3_ssh.pcap), [tp3_http.pcap](captures/tp3_http.pcap), [tp3_dns.pcap](captures/tp3_dns.pcap) et [tp3_nfs.pcap](trames/tp3_nfs.pcap)**
+📁 **Captures réseau [tp3_ssh.pcap](captures/tp3_ssh.pcap), [tp3_http.pcap](captures/tp3_http.pcap), [tp3_dns.pcap](captures/tp3_dns.pcap) et [tp3_nfs.pcap](captures/tp3_nfs.pcap)**
 📁 **Capture réseau [tp3_3way.pcap](captures/tp3_3way.pcap)**
 
 ## V. El final
@@ -369,6 +369,7 @@ ilovecatgif
 | `web.tp3`    | X                        |            X     | `10.3.1.195/28`      | `router.tp3` `10.3.1.206/28`|
 | `nfs.tp3`    | X                        |            X     | `10.3.1.200/28`      | `router.tp3` `10.3.1.206/28`|
 
-- Le schéma:
+- Le schéma (port 22 ouvert sur toutes les machines):
 
-![](https://i.imgur.com/Ioj5MWk.png)
+![](https://i.imgur.com/HSKS57K.png)
+
