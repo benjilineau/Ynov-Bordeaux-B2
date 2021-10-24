@@ -218,6 +218,28 @@ admin> ping 10.2.2.254
 84 bytes from 10.2.2.254 icmp_seq=2 ttl=255 time=19.633 ms
 ```
 web: 
+```
+PING 10.3.3.254 (10.3.3.254) 56(84) bytes of data.
+64 bytes from 10.3.3.254: icmp_seq=1 ttl=255 time=13.2 ms
+64 bytes from 10.3.3.254: icmp_seq=2 ttl=255 time=17.8 ms
+```
+- en ajoutant une route vers les réseaux, ils peuvent se ping entre eux
+```
+pc1> ip 10.1.1.1/24 10.1.1.254
+admin> ip 10.2.2.1/24 10.2.2.254
+[benji@web ~]$ sudo ip route add default via 10.3.3.254 dev enp0s3
+
+PC1> ping 10.2.2.1
+
+84 bytes from 10.2.2.1 icmp_seq=1 ttl=63 time=31.704 ms
+84 bytes from 10.2.2.1 icmp_seq=2 ttl=63 time=30.842 ms
+84 bytes from 10.2.2.1 icmp_seq=3 ttl=63 time=32.219 ms
+
+PC1> ping 10.3.3.1
+
+84 bytes from 10.3.3.1 icmp_seq=1 ttl=63 time=22.983 ms
+84 bytes from 10.3.3.1 icmp_seq=2 ttl=63 time=16.354 ms
+```
 
 
 ## IV. NAT
