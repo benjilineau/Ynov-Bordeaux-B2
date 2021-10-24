@@ -1,0 +1,11 @@
+[Unit]
+Description=Our own lil backup service (TP2)
+
+[Service]
+ExecStart=sudo bash /srv/tp2_backup_db.sh /home/benji/test/ nextCloud
+Type=oneshot
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
+
