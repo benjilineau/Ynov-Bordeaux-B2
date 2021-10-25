@@ -8,7 +8,7 @@
   Target=nextcloud
   Here=$(pwd)/"hello_${DATE}.tar.gz"
 
-  mysqldump --user=nextcloud --password=meow --databases nextcloud
+  mysqldump --user=root--password=root --databases nextcloud
 
   tar cvzf "hello_${DATE}.tar.gz" backup_donnees.sql
   rsync -av --remove-source-files ${Here} ${Destination}
