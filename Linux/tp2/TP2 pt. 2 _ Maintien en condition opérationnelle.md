@@ -339,17 +339,17 @@ La prochaine sauvegarde va bien se faire à 3h15.
 + Target=nextCloud
 ++ pwd
 + Here=/home/benji/hello_211024_141846.tar.gz
-+ mysqldump --user=benji --password=meow --databases nextCloud
-mysqldump: Got error: 1045: "Access denied for user 'benji'@'localhost' (using password: YES)" when trying to connect
++ mysqldump --user=root --password=root --databases nextCloud
+mysqldump: Got error: 1045: "Access denied for user 'root'@'localhost' (using password: YES)" when trying to connect
 + tar cvzf hello_211024_141846.tar.gz backup_donnees.sql
-backup_donnees.sql
+backup_db.sql
 + rsync -av --remove-source-files /home/benji/hello_211024_141846.tar.gz test/
 sending incremental file list
 hello_211024_141846.tar.gz
 
 sent 172 bytes  received 43 bytes  524.00 bytes/sec
 total size is 123  speedup is 0.44
-+ rm -rf backup_donnees.sql
++ rm -rf backup_db.sql
 + tail -n +6
 + ls -tp test/
 + grep -v '/$'
