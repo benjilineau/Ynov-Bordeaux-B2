@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS customers (
+    customerId INTEGER PRIMARY KEY AUTOINCREMENT,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    phoneNumber VARCHAR(255) NOT NULL,
+    emailAddress VARCHAR(255) NOT NULL,
+    breakfast BOOLEAN
+);
+
+CREATE TABLE IF NOT EXISTS rooms (
+    roomId INTEGER PRIMARY KEY AUTOINCREMENT,
+    floor INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    bedding INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS bookings (
+    bookId INTEGER PRIMARY KEY AUTOINCREMENT,
+    customerId INTEGER NOT NULL,
+    date DATE,
+    roomId INTEGER NOT NULL
+);
+
+CREATE TABLE  IF NOT EXISTS menus (
+    menusId INTEGER NOT NULL,
+    starters VARCHAR(255),
+    meets VARCHAR(255),
+    fishes VARCHAR(255),
+    desserts VARCHAR(255),
+    drinks VARCHAR(255),
+    price INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS employees (
+    employeeId INTEGER PRIMARY KEY AUTOINCREMENT,
+    firstName VARCHAR(255) NOT NULL, 
+    lastName VARCHAR(255) NOT NULL,
+    phoneNumber VARCHAR(255) NOT NULL,
+    job VARCHAR(255) NOT NULL,
+    emailAddress VARCHAR(255) NOT NULL
+);
+
+
+
+
